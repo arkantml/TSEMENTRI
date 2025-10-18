@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="array.js"></script>
+    <script type="module" src="darkmode.js"></script>
+    <script type="module" src="menu.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="countui.js"></script>
+    <script>
+        // Cek localStorage untuk theme
+        tailwind.config = {
+            darkMode: 'class',
+        };
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+</head>
+
+<body class="cursor-pointer bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+    <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="font-bold text-xl bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">
+                TSEMENTRI
+            </h1>
+            <nav class="hidden md:flex gap-6 text-lg font-medium">
+                <a href="index.html#hero" class="hover:text-green-500">Beranda</a>
+                <a href="about.html" class="hover:text-green-500">Tentang</a>
+                <a href="member.html" class="hover:text-green-500">Anggota</a>
+                <a href="artikel.html" class="hover:text-green-500">Galeri
+                <a href="artikel.html" class="hover:text-green-500">Artikel</a>
+                <a href="index.html#kontak" class="hover:text-green-500">Kontak</a>
+            </nav>
+            <button id="burger-toggle" class="md:hidden text-2xl dark:text-white">☰</button>
+            <button id="themeToggle" class="p-2 rounded-md border dark:border-gray-600 ">
+                ☀️
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden flex-col gap-4 p-6 bg-white dark:bg-gray-800 md:hidden">
+            <a href="index.html#hero" class="m-2 text-lg block hover:text-green-500">Beranda</a>
+            <a href="about.html" class="m-2 text-lg block hover:text-green-500 ">Tentang</a>
+            <a href="member.html" class="m-2 text-lg block hover:text-green-500 ">Anggota</a>
+            <a href="artikel.html" class="m-2 text-lg block hover:text-green-500 ">Galeri</a>
+            <a href="artikel.html" class="m-2 text-lg block hover:text-green-500">Artikel</a>
+            <a href="index.html#kontak" class="m-2 text-lg block hover:text-green-500 ">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Anggota Section -->
+    <section id="anggota" class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
+        <!-- Banner -->
+        <div class="mb-12">
+            <div class="bg-gradient-to-r  from-purple-700 via-blue-700 to-blue-500 py-16 text-white text-center">
+                <div class="max-w-4xl mx-auto px-6">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Anggota <span
+                            class="bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">TSEMENTRI</span>
+                    </h2>
+                    <p class="text-xl opacity-90">Kenali anggota-anggota TSEMENTRI yang berbakat dan Berkontribusi dalam
+                        organisasi
+                        kami</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Header -->
+            <!-- Stats Overview -->
+            <!-- Pastikan ada element dengan ID ini -->
+            <div id="statistikCards"></div>
+            <!-- Struktur Kepengurusan -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center dark:text-white">Struktur Kepengurusan</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Pembina & Pelatih -->
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-2xl p-6">
+                        <h4 class="text-lg font-semibold mb-4 text-blue-600">Pembina & Pelatih</h4>
+                        <div class="space-y-4 text-blue-600">
+                            <div class="flex items-center space-x-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div
+                                    class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    AF
+                                </div>
+                                <div>
+                                    <div class="font-semibold ">Ahmad Fauzi</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Pembina</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div
+                                    class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    FH
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Fathoni Hidayah Sakti, S.kom.</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Pelatih</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ketua Angkatan -->
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-yellow-50 dark:from-green-900/20 dark:to-yellow-900/20 rounded-2xl p-6">
+                        <h4 class="text-lg font-semibold mb-4 text-green-600">Ketua Angkatan</h4>
+                        <div class="space-y-4 text-green-600">
+                            <div class="flex items-center space-x-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div
+                                    class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    MF
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Muhammad Fachri</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Ketua Angkatan 1</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div
+                                    class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    MA
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Muhammad Arkan Muiz</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Ketua Angkatan 2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Angkatan Aktif -->
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-6">
+                        <h4 class="text-lg font-semibold mb-4 text-purple-600">Angkatan Aktif</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-2">
+                                <p>Daftar Angkatan: <span id="angkatanList" class="font-bold">-</span></p>
+                            </div>
+                            <div class="flex justify-between items-center p-2">
+                                <p>Angkatan Pertama: <span id="lowestAngkatan" class="font-bold">0</span></p>
+                            </div>
+                            <div class="flex justify-between items-center p-2">
+                                <p>Total Anggota: <span id="totalMembers" class="font-bold">0</span></p>
+                            </div>
+                            <div class="flex justify-between items-center p-2">
+                                <p>Total Angkatan: <span id="currentAngkatan" class="font-bold">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="min-h-screen">
+                <!-- Anggota -->
+                <div id="anggota" class="bg-gray-50 dark:bg-gray-900 px-6">
+                    <div class="mt-5 max-w-6xl mx-auto">
+                        <h2 class="text-2xl font-bold text-center mb-6 dark:text-white">Anggota</h2>
+
+                        <!-- Filter -->
+                        <div class="flex flex-col md:flex-row gap-4 mb-6">
+                            <select id="filterAngkatan" class="p-2 border rounded dark:bg-gray-800 dark:text-white">
+                                <option value="all">Semua opsi</option>
+                                <option value="1">Pendiri</option>
+                                <option value="2">Pembina & Pelatih</option>
+                                <option value="3">Ketua angkatan</option>
+                                <option value="4">Angkatan 1</option>
+                                <option value="5">Angkatan 2</option>
+                                <option value="6">Angkatan 3</option>
+                            </select>
+                            <input id="searchInput" type="text" placeholder="Cari nama..."
+                                class="p-2 border rounded flex-1 dark:bg-gray-800 dark:text-white" />
+                        </div>
+                    </div>
+                    <div id="cardContainer"
+                        class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto p-2 border rounded-lg ">
+                    </div>
+                    <!-- Modal -->
+                    <div id="modal" class=" hidden">
+                        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                            <div id="modalContent"
+                                class="bg-white dark:bg-gray-800 rounded-xl shadow-lg w-96 p-6 relative transform scale-95 opacity-0 transition duration-300 flex gap-4">
+                                <button id="closeModal"
+                                    class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+                                <img id="modalFoto" src="default.jpg" alt="Foto Profil"
+                                    class="w-20 h-20 rounded-full object-cover border-yellow-500 border-[3px] shadow-2xl shadow-amber-500">
+                                <div>
+                                    <h2 id="modalNama" class="text-xl font-bold mb-2"></h2>
+                                    <p id="modalType" class="text-gray-700 dark:text-gray-300 mb-2"></p>
+                                    <p id="modalEmail" class="mt-2 text-sm text-blue-600 dark:text-blue-400"></p>
+                                    <p id="modalKelas" class="text-sm text-gray-600 dark:text-gray-400"></p>
+                                    <p id="modalNsm" class="text-sm text-gray-600 dark:text-gray-400"></p>
+                                    <p id="modalStatus" class="text-sm text-gray-600 dark:text-gray-400"></p>
+                                    <p id="modalNISN" class="text-sm text-gray-600 dark:text-gray-400"></p>
+                                    <span id="modalBadge"
+                                        class=" inline-block mt-4 px-3 py-1 text-xs rounded-full font-semibold bg-yellow-400 text-black">Khusus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <button id="loadMore" class="px-4 py-2 bg-blue-500 text-white rounded hidden">
+                            Load More
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <style>
+        .filter-btn.active {
+            background: linear-gradient(135deg, #22C55E, #3B82F6);
+        }
+
+        .member-card {
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+
+    <script></script>
+</body>
+
+</html>

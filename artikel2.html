@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel TSEMENTRI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="darkmode.js"></script>
+    <script type="module" src="menu.js"></script>
+    <script type="module" src="gallery.js"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' };
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+    <style>
+        .article-card {
+            transition: opacity 300ms ease-out, transform 300ms ease-out;
+        }
+
+        .category-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-gray-100 transition-colors">
+
+    <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="font-bold text-xl bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">
+                TSEMENTRI
+            </h1>
+            <nav class="hidden md:flex gap-6 text-lg font-medium">
+                <a href="index.html#hero" class="hover:text-green-500">Beranda</a>
+                <a href="about.html" class="hover:text-green-500">Tentang</a>
+                <a href="member.html" class="hover:text-green-500">Anggota</a>
+                <a href="#" class="hover:text-green-500">Galeri</a>
+                <a href="#" class="hover:text-green-500">Artikel</a>
+                <a href="index.html#kontak" class="hover:text-green-500">Kontak</a>
+            </nav>
+            <button id="burger-toggle" class="md:hidden text-2xl dark:text-white">☰</button>
+            <button id="themeToggle" class="p-2 rounded-md border dark:border-gray-600 ">
+                ☀️
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden flex-col gap-4 p-6 bg-white dark:bg-gray-800 md:hidden">
+            <a href="index.html#hero" class="m-2 text-lg block hover:text-green-500">Beranda</a>
+            <a href="about.html" class="m-2 text-lg block hover:text-green-500 ">Tentang</a>
+            <a href="member.html" class="m-2 text-lg block hover:text-green-500 ">Anggota</a>
+            <a href="#" class="m-2 text-lg block hover:text-green-500 ">Galeri</a>
+            <a href="#" class="m-2 text-lg block hover:text-green-500">Artikel</a>
+            <a href="index.html#kontak" class="m-2 text-lg block hover:text-green-500 ">Kontak</a>
+        </nav>
+    </header>
+
+    <main id="hero" class="bg-gray-50 dark:bg-gray-900 pt-16">
+        <div class="bg-gradient-to-r from-purple-700 via-blue-700 to-blue-500 py-16 text-white text-center">
+            <div class="max-w-4xl mx-auto px-6 ">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Artikel & Galeri <span
+                        class="bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">TSEMENTRI</span>
+                </h2>
+                <p class="text-xl opacity-90">Baca perjalanan kami😊</p>
+            </div>
+        </div>
+        <div id="auth-container" class="p-4 flex justify-end ">
+            <!-- Status login akan ditampilkan di sini oleh JavaScript -->
+            <button id="login-button"
+                class="m-2 px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700">Login/Daftar</button>
+        </div>
+    </main>
+
+    <section id="galeri" class="py-10 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Galeri Kegiatan TSEMENTRI</h2>
+
+            <div class="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
+                <!-- Carousel Container -->
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="img/3.jpeg" alt="Workshop Coding" class="w-full h-96 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                            <h3 class="text-white text-xl font-semibold">Kompetisi Robotik</h3>
+                            <p class="text-gray-200">Perdana TEMENTRI berpartisipasi dalam kompetisi</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 relative flex ">
+                        <img src="img/11.jpg" alt="Kompetisi Robotik" class="w-full h-96 object-cover">
+
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                            <h3 class="text-white text-xl font-semibold">Kompetisi Robotik 2025</h3>
+                            <p class="text-gray-200">Juara 1 Kompetisi Sains Siswa Muslim Indonesia</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="img/8.jpeg" alt="Foto Bersama" class="w-full h-96 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                            <h3 class="text-white text-xl font-semibold">TSEMENTRI X MYRES MTsN 3 Medan</h3>
+                            <p class="text-gray-200">Kolaborasi Tim peneliti MYRES MtsN 3 Medan dengan TSEMENTRI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button id="prevBtn"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10">
+                    ←
+                </button>
+                <button id="nextBtn"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10">
+                    →
+                </button>
+
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                    <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+                        data-index="0"></button>
+                    <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+                        data-index="1"></button>
+                    <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+                        data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="artikel" class=" bg-gray-100 dark:bg-gray-900 mb-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div id="category-filters" class="flex flex-wrap justify-center gap-2 mb-12"></div>
+            <div id="article-grid" class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 "></div>
+        </div>
+    </section>
+
+    <hr class="dark:border-gray-700">
+
+    <section id="form-section" class="py-12 sm:py-16 hidden bg-gray-100 dark:bg-gray-900">
+        <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg dark:text-white dark:border-2 border-amber-400 shadow-amber-500">
+                <h2 id="form-title" class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Tambah Artikel Baru
+                </h2>
+                <form id="add-article-form" class="space-y-6 ">
+                    <input type="hidden" id="articleId">
+                    <div>
+                        <label for="title"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Judul
+                            Artikel</label>
+                        <input type="text" id="title"
+                            class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600"
+                            required>
+                    </div>
+                    <div>
+                        <label for="category"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Kategori</label>
+                        <input type="text" id="category" placeholder="Contoh: Teknologi, Berita"
+                            class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600"
+                            required>
+                    </div>
+                    <div>
+                        <label for="imageUrl"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">URL
+                            Gambar</label>
+                        <input type="url" id="imageUrl"
+                            class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600"
+                            placeholder="https://..." required>
+                    </div>
+                    <div id="image-preview-container" class="hidden mt-4">
+                        <img id="image-preview" src="" alt="Pratinjau Gambar"
+                            class="max-w-xs mx-auto rounded-lg shadow-md">
+                    </div>
+                    <div>
+                        <label for="summary"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Ringkasan
+                            Singkat</label>
+                        <textarea id="summary" rows="2"
+                            class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <label for="content"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">Isi Artikel
+                            Lengkap</label>
+                        <textarea id="content" rows="4"
+                            class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" id="submit-button"
+                            class="w-full rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 disabled:bg-gray-400">Tambahkan
+                            Card</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-container"
+        class="fixed inset-0 bg-gray-900 bg-opacity-75  items-center justify-center p-4 z-50 hidden text-black flex">
+        <div class="bg-white rounded-lg shadow-xl p-6 sm:p-8 w-full max-w-sm relative ">
+            <button id="close-modal-btn"
+                class="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-800">&times;</button>
+            <h2 id="modal-title" class="text-2xl font-bold text-center text-gray-900 mb-4">Masuk ke Akun Anda</h2>
+            <p id="modal-message" class="text-center text-gray-600 mb-6"></p>
+            <form id="auth-form" class="space-y-4">
+                <div>
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" placeholder="Email"
+                        class="w-full p-3 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" id="password" placeholder="Kata Sandi (min. 6 karakter)"
+                        class="w-full p-3 border border-gray-300 rounded-md" required>
+                </div>
+                <p id="error-message" class="text-red-500 text-sm text-center h-5"></p>
+                <div class="flex gap-4">
+                    <button type="submit" id="login-submit-btn"
+                        class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">Masuk</button>
+                    <button type="button" id="signup-btn"
+                        class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700">Daftar</button>
+                </div>
+            </form>
+            <div id="confirmation-buttons" class="hidden">
+                <div class="flex justify-center gap-4">
+                    <button id="confirm-btn"
+                        class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition duration-300">Ya,
+                        Hapus</button>
+                    <button id="cancel-btn"
+                        class="w-full bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-400 transition duration-300">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2">
+        <!-- Notifikasi akan muncul di sini -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="lab.js"></script>
+
+
+</body>
+
+</html>
