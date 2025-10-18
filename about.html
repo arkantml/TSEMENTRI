@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="array.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="darkmode.js"></script>
+  <script type="module" src="countui.js"></script>
+  <script type="module" src="menu.js"></script>
+  <script>
+    // Cek localStorage untuk theme
+    tailwind.config = {
+      darkMode: 'class',
+    };
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body class="cursor-pointer dark:text-white">
+  <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-bold text-xl bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">TSEMENTRI
+      </h1>
+      <nav class="hidden md:flex gap-6 text-lg font-medium">
+        <a href="webrobo13.html#hero" class="hover:text-green-500">Beranda</a>
+        <a href="#" class="hover:text-green-500">Tentang</a>
+        <a href="Member.html" class="hover:text-green-500">Anggota</a>
+        <a href="artikel.html" class="hover:text-green-500">Galeri
+        <a href="artikel.html" class="hover:text-green-500">Artikel</a>
+        <a href="webrobo13#kontak" class="hover:text-green-500">Kontak</a>
+      </nav>
+      <button id="burger-toggle" class="md:hidden text-2xl" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobile-menu">☰</button>
+      <button id="themeToggle" class="p-2 rounded-md border dark:border-gray-600 ">
+        ☀️
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden flex-col gap-4 p-6 bg-white dark:bg-gray-800 md:hidden">
+      <a href="webrobo13.html#hero" class="m-2 text-lg block hover:text-green-500">Beranda</a>
+      <a href="#" class="m-2 text-lg block hover:text-green-500 ">Tentang</a>
+      <a href="Member.html" class="m-2 text-lg block hover:text-green-500 ">Anggota</a>
+      <a href="artikel.html" class="m-2 text-lg block hover:text-green-500 ">Galeri</a>
+      <a href="artikel.html" class="m-2 text-lg block hover:text-green-500">Artikel</a>
+      <a href="webrobo13#kontak" class="m-2 text-lg block hover:text-green-500 ">Kontak</a>
+    </nav>
+  </header>
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white dark:bg-gray-900">
+    <!-- Banner -->
+    <div class="mb-12">
+      <div class="bg-gradient-to-r from-purple-700 via-blue-700 to-blue-500 py-16 text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Tentang <span class="bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">TSEMENTRI</span></h2>
+          <p class="text-xl opacity-90">Wadah Siswa Berbakat Teknologi Sejak 2023</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 space-y-8">
+
+      <!-- Sejarah Singkat -->
+      <div
+        class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
+        <div class="flex items-center mb-6">
+          <div class="w-3 h-8 bg-green-500 rounded-full mr-4"></div>
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Sejarah Singkat</h3>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+          TSEMENTRI didirikan pada 2023 oleh MTsN 3 Medan sebagai wadah siswa berbakat di bidang teknologi.
+          Dibimbing oleh <span class="font-semibold text-green-600 dark:text-green-400">Ahmad Fauzi</span> dan
+          dilatih oleh <span class="font-semibold text-green-600 dark:text-green-400">Fathoni Hidayah Sakti</span>,
+          kami telah meraih prestasi dalam Kompetisi Sains Siswa Muslim Indonesia bidang robotik (2025).
+        </p>
+      </div>
+
+      <!-- Visi & Misi -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Visi -->
+        <div
+          class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-blue-200 dark:border-blue-800">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">V</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Visi</h3>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+            Menjadi wadah dalam pengembangan bakat teknologi siswa yang berprestasi di tingkat nasional
+           , mencetak generasi digital yang kreatif dan inovatif.
+          </p>
+        </div>
+
+        <!-- Misi -->
+        <div
+          class="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-green-200 dark:border-green-800">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">M</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Misi</h3>
+          </div>
+          <ul class="text-gray-700 dark:text-gray-300 text-lg space-y-3">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Menyelenggarakan pelatihan teknologi berkala
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Mengikuti kompetisi nasional
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Membangun jaringan dengan industri teknologi
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Mengembangkan project inovatif berbasis teknologi
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Prestasi & Pencapaian -->
+      <div
+        class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+            <span class="text-white font-bold">🏆</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Prestasi & Pencapaian</h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+              <span class="text-gray-700 dark:text-gray-300">Honorable Mention Kompetisi Sains Siswa Muslim Indonesia 2025</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-gray-400 rounded-full mr-3"></div>
+              <span class="text-gray-700 dark:text-gray-300">3+ Project Teknologi Terselesaikan</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+              <span class="text-gray-700 dark:text-gray-300">30+ Anggota terdaftar</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-gray-400 rounded-full mr-3"></div>
+              <span class="text-gray-700 dark:text-gray-300">3 Angkatan Berjalan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Statistik Cards -->
+      
+  </section>
+</body>
+
+</html>
