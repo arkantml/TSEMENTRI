@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsementri</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="array.js"></script>
+  <script type="module" src="darkmode.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="menu.js"></script>
+  <script type="module" src="gallery.js"></script>
+  
+  <script>
+    // Cek localStorage untuk theme
+    tailwind.config = {
+      darkMode: 'class',
+    };
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-bold text-xl bg-gradient-to-r from-green-600 to-lime-400 bg-clip-text text-transparent">TSEMENTRI
+      </h1>
+      <nav class="hidden md:flex gap-6 text-lg font-medium">
+        <a href="#hero" class="hover:text-green-500">Beranda</a>
+        <a href="#titleabout" class="hover:text-green-500">Tentang</a>
+        <a href="Member.html" class="hover:text-green-500">Anggota</a>
+        <a href="#galeri" class="hover:text-green-500">Galeri
+        <a href="artikel2.html" class="hover:text-green-500">Artikel</a>
+        <a href="#kontak" class="hover:text-green-500">Kontak</a>
+      </nav>
+      <button id="burger-toggle" class="md:hidden text-2xl" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobile-menu">☰</button>
+      <button id="themeToggle" class="p-2 rounded-md border dark:border-gray-600 ">
+        ☀️
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden flex-col gap-4 p-6 bg-white dark:bg-gray-800 md:hidden">
+      <a href="#hero" class="m-2 text-lg block hover:text-green-500">Beranda</a>
+      <a href="#titleabout" class="m-2 text-lg block hover:text-green-500 ">Tentang</a>
+      <a href="Member.html" class="m-2 text-lg block hover:text-green-500 ">Anggota</a>
+      <a href="#galeri" class="m-2 text-lg block hover:text-green-500 ">Galeri</a>
+      <a href="artikel2.html" class="m-2 text-lg block hover:text-green-500">Artikel</a>
+      <a href="#kontak" class="m-2 text-lg block hover:text-green-500 ">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero"
+    class="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center px-6 pt-20"
+    style="background-image: url('img/heroedit.JPG'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-t from-lime-400/60 to-green-800/60"></div>
+    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-center gap-8 w-full max-w-6xl ">
+      <div class="order-1 md:order-2 mb-6 md:mb-0 flex justify-center md:justify-end w-full md:w-1/2">
+        <img src="img/tsementri.jpeg" alt="Logo Organisasi"
+          class=" w-24 sm:w-32 md:w-60 rounded-full border-4 border-emerald-600 shadow-lg hover:scale-105 transition-transform duration-300 hover:border-green-500 hover:shadow-yellow-500">
+      </div>
+      <div class="order-2 md:order-1 w-full md:w-1/2 md:text-left">
+        <h2 class="whitespace-nowrap text-3xl md:text-5xl font-bold mb-3">Selamat Datang Di <br><span
+            class="block md:inline bg-gradient-to-r from-green-400 to-lime-200 bg-clip-text text-transparent">TSEMENTRI</span>
+        </h2>
+        <p class="text-lg md:text-xl">Bersatu, Berkarya, dan Berkontribusi untuk Negeri</p>
+        <button href="#tentang" class="m-4 p-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><a
+            href="#titleabout">Tentang Kami</a></button>
+        <button href="#tentang" class="m-4 p-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><a
+            href="#kontak">Hubungi Kami</a></button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Tentang -->
+  <section id="tentang" class="min-h-screen bg-gray-100 dark:bg-gray-800 py-12 ">
+    <div class="relative overflow-hidden bg-gray-100 dark:bg-gray-800 py-12">
+      <div id="titleabout"class="flex space-x-6 animate-marquee-left">
+        <!-- Foto 1 -->
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/1.jpeg" alt="Kegiatan 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Foto 2 -->
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/2.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/3.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/4.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/5.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/6.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <!-- Duplicate untuk infinite loop -->
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/1.jpeg" alt="Kegiatan 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Foto 2 -->
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/2.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/3.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/4.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/5.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <img src="img/6.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <style>
+        @keyframes marqueeLeft {
+          0% {
+            transform: translateX(-50%);
+          }
+
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        .animate-marquee-left {
+          animation: marqueeLeft 30s linear infinite;
+          display: flex;
+          width: max-content;
+        }
+      </style>
+
+      <div  class="max-w-4xl mx-auto text-center px-6 m-4">
+        <h2 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-6 ">Tentang TSEMENTRI</h2>
+        <p class="text-lg md:text-xl xl:*:text-3xl text-gray-700 dark:text-gray-300 mb-6">
+          Wadah siswa MTsN 3 Medan berbakat teknologi sejak 2023.
+          Berprestasi di kompetisi robotik nasional dengan bimbingan ahli.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-2xl md:text-3xl xl:text-5xl">
+          <div class="text-center">
+            <div class="font-bold text-green-600">2023</div>
+            <div class="text-sm">Tahun Berdiri</div>
+          </div>
+          <div class="text-center">
+            <div class="font-bold text-green-600">25</div>
+            <div class="text-sm">Anggota Aktif</div>
+          </div>
+          <div class="text-center">
+            <div class="font-bold text-green-600">5+</div>
+            <div class="text-sm">Program</div>
+          </div>
+          <div class="text-center">
+            <div class="font-bold text-green-600">🏆</div>
+            <div class="text-sm">Prestasi</div>
+          </div>
+        </div>
+        <a href="about.html" class="inline-block px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          Selengkapnya tentang Kami
+        </a>
+      </div>
+      <!-- HTML -->
+      <div class="relative overflow-hidden bg-gray-100 dark:bg-gray-800 py-12">
+        <div class="flex space-x-6 animate-scroll">
+          <!-- Foto 1 -->
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/7.jpeg" alt="Kegiatan 1" class="w-full h-full object-cover">
+          </div>
+          <!-- Foto 2 -->
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/8.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/9.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/10.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/11.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/12.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <!-- Duplicate untuk infinite loop -->
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/7.jpeg" alt="Kegiatan 1" class="w-full h-full object-cover">
+          </div>
+          <!-- Foto 2 -->
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/8.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/9.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/10.jpeg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/11.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
+            <img src="img/12.jpg" alt="Kegiatan 2" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <style>
+          /* CSS Animation */
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+
+          .animate-scroll {
+            animation: scroll 20s linear infinite;
+            display: flex;
+            width: max-content;
+          }
+        </style>
+      </div>
+
+
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Galeri Kegiatan TSEMENTRI</h2>
+
+      <div class="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
+        <!-- Carousel Container -->
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+          <!-- Slide 1 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="img/3.jpeg" alt="Workshop Coding" class="w-full h-96 object-cover">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <h3 class="text-white text-xl font-semibold">Kompetisi Robotik</h3>
+              <p class="text-gray-200">Perdana TEMENTRI  berpartisipasi dalam kompetisi</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="w-full flex-shrink-0 relative flex ">
+            <img src="img/11.jpg" alt="Kompetisi Robotik" class="w-full h-96 object-cover">
+
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <h3 class="text-white text-xl font-semibold">Kompetisi Robotik 2025</h3>
+              <p class="text-gray-200">Juara 1 Kompetisi Sains Siswa Muslim Indonesia</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="img/8.jpeg" alt="Foto Bersama" class="w-full h-96 object-cover">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <h3 class="text-white text-xl font-semibold">TSEMENTRI X MYRES MTsN 3 Medan</h3>
+              <p class="text-gray-200">Kolaborasi Tim peneliti MYRES MtsN 3 Medan dengan TSEMENTRI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevBtn"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10">
+          ←
+        </button>
+        <button id="nextBtn"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10">
+          →
+        </button>
+
+        <!-- Indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+            data-index="0"></button>
+          <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+            data-index="1"></button>
+          <button class="indicator w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-all"
+            data-index="2"></button>
+        </div>
+      </div>
+    </div>
+    <button class="mt-8 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 block mx-auto"><a
+        href="artikel2.html">Lihat Semua Galeri</a>
+    </button>
+  </section>
+  <!-- Anda bisa meletakkan section ini di file HTML Anda, misalnya di bagian bawah sebelum modal -->
+<section id="kontak" class="py-20 bg-white dark:bg-gray-800 text-black">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4 dark:text-white">Hubungi Kami</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">Punya pertanyaan atau masukan? Kirimkan pesan Anda.</p>
+
+        <!-- 1. FORM UTAMA -->
+        <form id="contact-form" class="space-y-6">
+            <div>
+                <input type="text" id="contact-name" placeholder="Nama Anda" class="w-full p-3 rounded-md" required>
+            </div>
+            <div>
+                <input type="email" id="contact-email" placeholder="Email Anda" class=" w-full p-3 rounded-md" required>
+            </div>
+            <div>
+                <textarea id="contact-message" rows="5" placeholder="Pesan Anda" class="border-2 w-full p-3 rounded-md focus:border-green-500" required></textarea>
+            </div>
+            <div>
+                <!-- 2. TOMBOL SUBMIT -->
+                <button type="submit" id="contact-submit-button" class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg">
+                    Kirim Pesan
+                </button>
+            </div>
+            <!-- 3. AREA UNTUK PESAN STATUS -->
+            <p id="contact-status" class="h-5 text-green-500"></p>
+        </form>
+    </div>
+</section>
+  <footer class="bg-gray-900 text-gray-300 py-6 text-center">
+    <p>&copy; 2025 TSEMENTRI. Semua Hak Dilindungi. @MA</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="contact.js"></script>
+</body>
+
+</html>
