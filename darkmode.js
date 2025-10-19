@@ -12,11 +12,7 @@ themeToggle.addEventListener("click", () => {
     }
     updateThemeIcon();
 });
-const burgerToggle = document.getElementById("burgerToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-burgerToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-});
+
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
@@ -24,3 +20,4 @@ document.addEventListener("keydown", (e) => {
   }
 
 });
+
