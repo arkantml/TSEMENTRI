@@ -1,5 +1,5 @@
 import { anggota } from "./array.js";
-const container = document.getElementById("cardContainer"); // Toggle Dark Mode
+const container = document.getElementById("cardContainer"); 
 const filterAngkatan = document.getElementById("filterAngkatan");
 const searchInput = document.getElementById("searchInput");
 
@@ -100,5 +100,6 @@ modal.addEventListener("click", (e) => {
 searchInput.addEventListener("input", renderCards);
 filterAngkatan.addEventListener("change", renderCards);
 renderCards();
+
 
 
