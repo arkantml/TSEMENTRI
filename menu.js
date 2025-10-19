@@ -1,8 +1,8 @@
-const burgerToggle = document.getElementById("burger-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-burgerToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-});
+//const burgerToggle = document.getElementById("burger-toggle");
+//const mobileMenu = document.getElementById("mobile-menu");
+//burgerToggle.addEventListener("click", () => {
+//    mobileMenu.classList.toggle("hidden");
+//});
 
 class MobileMenu {
     constructor() {
@@ -65,3 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new MobileMenu();
 
 });
+
