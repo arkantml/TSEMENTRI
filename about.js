@@ -21,14 +21,14 @@ kataSpans.forEach(span => {
         modalStatusspan.textContent = "Status: " + (item.status || "-");
         modalFoto.src = item.foto || "img/default.jpg";
 
-        // Atur isi lainnya sesuai tipe
+       
         if (item.tipe === "a") {
             modalNsmspan.textContent = "NSM: " + item.nsm;
         } else if (item.tipe === "b") {
             modalNsmspan.classList.add("hidden");
             modalBadgespan.classList.add("hidden");
         }
-        // Tampilkan modal
+       
         modalspan.classList.remove("hidden");
         setTimeout(() => {
             modalContentspan.classList.remove("scale-95", "opacity-0");
@@ -48,4 +48,5 @@ closeModalspan.addEventListener("click", closeModalspanFn);
 modalspan.addEventListener("click", (e) => {
     if (e.target === modalspan) closeModalspanFn();
 });
+
 
