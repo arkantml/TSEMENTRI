@@ -91,9 +91,9 @@ function closeModalFn() {
     }, 200);
 }
 
-closeModal.addEventListener("click", closeModalFn);
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModalFn();
+document.addEventListener("DOMContentLoaded", () => { 
+    const closeModal = document.getElementById("closeModal"); if (closeModal) 
+        closeModal.addEventListener("click", closeModalFn); 
 });
 
 searchInput.addEventListener("input", renderCards);
@@ -106,6 +106,7 @@ document.addEventListener("keydown", (e) => {
   }
 
 });
+
 
 
 
