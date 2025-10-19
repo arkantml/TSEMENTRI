@@ -4,7 +4,6 @@ const filterAngkatan = document.getElementById("filterAngkatan");
 const searchInput = document.getElementById("searchInput");
 
 
-// Modal Logic
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 const closeModal = document.getElementById("closeModal");
@@ -18,7 +17,6 @@ const modalNsm = document.getElementById("modalNsm");
 const modalBadge = document.getElementById("modalBadge");
 const modalFoto = document.getElementById("modalFoto");
 
-// Filter Anggota
 
 function renderCards() {
     container.innerHTML = "";
@@ -99,8 +97,8 @@ modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModalFn();
 });
 
-// Event listener filter
 searchInput.addEventListener("input", renderCards);
 filterAngkatan.addEventListener("change", renderCards);
 renderCards();
+
 
