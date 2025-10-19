@@ -20,22 +20,18 @@ class Carousel {
     }
     
     init() {
-        // Initialize first slide
         this.updateIndicators();
         
         // Event listeners untuk navigation buttons
         this.prevBtn?.addEventListener('click', () => this.prev());
         this.nextBtn?.addEventListener('click', () => this.next());
         
-        // Event listeners untuk indicators
         this.indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => this.goToSlide(index));
         });
         
-        // Auto play
         this.startAutoPlay();
         
-        // Pause on hover
         this.carousel.parentElement.addEventListener('mouseenter', () => this.stopAutoPlay());
         this.carousel.parentElement.addEventListener('mouseleave', () => {
             if (this.isAutoPlaying) {
@@ -43,7 +39,6 @@ class Carousel {
             }
         });
         
-        // Touch/swipe support untuk mobile
         this.setupTouchEvents();
     }
     
@@ -78,7 +73,7 @@ class Carousel {
     }
     
     startAutoPlay() {
-        this.stopAutoPlay(); // Clear existing interval
+        this.stopAutoPlay(); 
         this.autoPlayInterval = setInterval(() => this.next(), 5000); // Ganti slide setiap 5 detik
         this.isAutoPlaying = true;
     }
@@ -122,7 +117,6 @@ class Carousel {
         });
     }
     
-    // Destroy method untuk cleanup
     destroy() {
         this.stopAutoPlay();
         this.prevBtn?.removeEventListener('click', () => this.prev());
@@ -134,10 +128,9 @@ class Carousel {
     }
 }
 
-// Initialize carousel saat DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     new Carousel();
 });
 
-// Export untuk akses global jika diperlukan
+
 window.Carousel = Carousel;
