@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ===== BAGIAN 0: KONFIGURASI SUPABASE =====
     
-    // Ganti dengan URL & Kunci Supabase Anda
     const SUPABASE_URL = 'https://rylytlvqxcsrjnmvqnkq.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5bHl0bHZxeGNzcmpubXZxbmtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4MjUyMDAsImV4cCI6MjA3NTQwMTIwMH0.dJAm0Irq_d67Sw52HR-779gl4BFyHM7k8v7_-MetVRo';
-    // Ganti dengan UID Admin Anda
     const ADMIN_UID = 'bdf1a1eb-0c42-4845-814f-161fd6c4f551';
     
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     
-    // ===== PENGATURAN AWAL & ELEMEN =====
     const articleGrid = document.getElementById('article-grid');
     const addArticleForm = document.getElementById('add-article-form');
     const formSection = document.getElementById('form-section');
@@ -33,14 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeFilter = 'all';
     let currentUser = null;
 
-    // Variabel untuk fitur lockout
     const MAX_LOGIN_ATTEMPTS = 4;
     const BASE_LOCKOUT_MINUTES = 5;
     let lockoutTimerInterval = null;
 
-    // ===== FUNGSI OTENTIKASI & UI =====
     
-    // FUNGSI BARU UNTUK MENAMPILKAN TOAST
     const showToast = (message, type = 'success') => {
         const toast = document.createElement('div');
         toast.className = `toast p-4 rounded-lg shadow-lg text-white font-semibold`;
@@ -54,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.textContent = message;
         toastContainer.appendChild(toast);
 
-        // Hapus toast setelah 5 detik
         setTimeout(() => {
             toast.remove();
         }, 5000);
@@ -202,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderArticles();
     };
 
-    // ===== EVENT LISTENERS OTENTIKASI =====
     supabaseClient.auth.onAuthStateChange((event, session) => {
         updateUI(session ? session.user : null);
     });
@@ -218,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
         handleSignUp(document.getElementById('email').value, document.getElementById('password').value);
     });
 
-    // ===== FUNGSI DATA & RENDER =====
     const loadingSpinnerHTML = `
         <div id="loading-spinner" class="col-span-full flex justify-center items-center py-20">
             <svg class="animate-spin h-10 w-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -308,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCategoryFilters();
     };
 
-    // ===== EVENT LISTENERS APLIKASI =====
     addArticleForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -403,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imagePreview.src = '';
     };
 
-    // ===== INISIALISASI APLIKASI =====
     loadArticles();
 });
+
 
