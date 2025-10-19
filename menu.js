@@ -1,10 +1,9 @@
-//const burgerToggle = document.getElementById("burger-toggle");
-//const mobileMenu = document.getElementById("mobile-menu");
-//burgerToggle.addEventListener("click", () => {
-//    mobileMenu.classList.toggle("hidden");
-//});
+const burgerToggle = document.getElementById("burger-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+burgerToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+});
 
-// mobile-menu.js
 class MobileMenu {
     constructor() {
         this.burgerToggle = document.getElementById('burger-toggle');
@@ -15,25 +14,20 @@ class MobileMenu {
     }
 
     init() {
-        // Event listener untuk burger toggle
         this.burgerToggle?.addEventListener('click', () => this.toggleMenu());
         
-        // Event listener untuk semua link di mobile menu
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => this.closeMenu());
         });
 
-        // Close menu ketika klik di luar (optional)
         document.addEventListener('click', (e) => this.handleOutsideClick(e));
         
-        // Close menu ketika resize window ke desktop size
         window.addEventListener('resize', () => this.handleResize());
     }
 
     toggleMenu() {
         this.mobileMenu.classList.toggle('hidden');
         
-        // Update aria-expanded untuk accessibility
         const isExpanded = !this.mobileMenu.classList.contains('hidden');
         this.burgerToggle.setAttribute('aria-expanded', isExpanded);
     }
@@ -61,14 +55,13 @@ class MobileMenu {
     }
 
     handleResize() {
-        // Auto close menu ketika window di-resize ke desktop size
         if (window.innerWidth >= 768) { // md breakpoint
             this.closeMenu();
         }
     }
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     new MobileMenu();
+
 });
