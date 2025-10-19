@@ -48,7 +48,7 @@ function renderCards() {
     `;
 
         card.addEventListener("click", () => {
-            [, modalKelas, modalNisn, modalNsm, modalBadge]
+            [modalKelas, modalNisn, modalNsm, modalBadge]
         .forEach(el => el.classList.remove("hidden"));
             modalNama.textContent = item.nama;
             modalType.textContent = item.type;
@@ -61,7 +61,6 @@ function renderCards() {
                 modalNisn.classList.add("hidden");
             }
             else if (item.tipe === "b") {
-                modalKelas.textContent = "Kelas:" + item.kelas;
                 modalNsm.classList.add("hidden");
                 modalKelas.classList.add("hidden");
                 modalNisn.classList.add("hidden");
@@ -107,6 +106,7 @@ document.addEventListener("keydown", (e) => {
   }
 
 });
+
 
 
 
