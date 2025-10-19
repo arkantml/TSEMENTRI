@@ -12,7 +12,6 @@
     <script type="module" src="script.js"></script>
     <script type="module" src="countui.js"></script>
     <script>
-        // Cek localStorage untuk theme
         tailwind.config = {
             darkMode: 'class',
         };
@@ -51,7 +50,6 @@
         </nav>
     </header>
 
-    <!-- Anggota Section -->
     <section id="anggota" class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
         <!-- Banner -->
         <div class="mb-12">
@@ -68,11 +66,8 @@
         </div>
         <div class="max-w-7xl mx-auto px-6">
 
-            <!-- Header -->
-            <!-- Stats Overview -->
-            <!-- Pastikan ada element dengan ID ini -->
+            
             <div id="statistikCards"></div>
-            <!-- Struktur Kepengurusan -->
             <div class="mb-12">
                 <h3 class="text-2xl font-bold mb-6 text-center dark:text-white">Struktur Kepengurusan</h3>
                 <div class="grid md:grid-cols-3 gap-6">
@@ -104,7 +99,6 @@
                         </div>
                     </div>
 
-                    <!-- Ketua Angkatan -->
                     <div
                         class="bg-gradient-to-br from-green-50 to-yellow-50 dark:from-green-900/20 dark:to-yellow-900/20 rounded-2xl p-6">
                         <h4 class="text-lg font-semibold mb-4 text-green-600">Ketua Angkatan</h4>
@@ -132,7 +126,6 @@
                         </div>
                     </div>
 
-                    <!-- Angkatan Aktif -->
                     <div
                         class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-6">
                         <h4 class="text-lg font-semibold mb-4 text-purple-600">Angkatan Aktif</h4>
@@ -154,12 +147,10 @@
                 </div>
             </div>
             <section class="min-h-screen">
-                <!-- Anggota -->
                 <div id="anggota" class="bg-gray-50 dark:bg-gray-900 px-6">
                     <div class="mt-5 max-w-6xl mx-auto">
                         <h2 class="text-2xl font-bold text-center mb-6 dark:text-white">Anggota</h2>
 
-                        <!-- Filter -->
                         <div class="flex flex-col md:flex-row gap-4 mb-6">
                             <select id="filterAngkatan" class="p-2 border rounded dark:bg-gray-800 dark:text-white">
                                 <option value="all">Semua opsi</option>
@@ -177,7 +168,6 @@
                     <div id="cardContainer"
                         class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto p-2 border rounded-lg ">
                     </div>
-                    <!-- Modal -->
                     <div id="modal" class=" hidden">
                         <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                             <div id="modalContent"
@@ -230,3 +220,4 @@
 
 
 </html>
+
