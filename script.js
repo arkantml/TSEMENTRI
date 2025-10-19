@@ -101,5 +101,13 @@ searchInput.addEventListener("input", renderCards);
 filterAngkatan.addEventListener("change", renderCards);
 renderCards();
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModalFn();
+  }
+
+});
+
+
 
 
