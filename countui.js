@@ -1,11 +1,11 @@
 import { anggota } from './array.js';
-// Function untuk extract angkatan dari type - DIPERBAIKI
+
 function extractAngkatanFromType(typeString) {
     if (!typeString) return null;
     
-    console.log("Processing type:", typeString); // Debug
+    console.log("Processing type:", typeString); 
     
-    // Pattern matching untuk mencari angka angkatan di type - DIPERBAIKI
+    
     const patterns = [
         /Angkatan\s*(\d+)/i,        // "Angkatan X"
         /Ketua\s*Angkatan\s*(\d+)/i, // "Ketua Angkatan X" 
@@ -14,25 +14,25 @@ function extractAngkatanFromType(typeString) {
     for (let pattern of patterns) {
         const match = typeString.match(pattern);
         if (match && match[1]) {
-            console.log("Found angkatan:", match[1]); // Debug
+            console.log("Found angkatan:", match[1]);
             return parseInt(match[1]);
         }
     }
     
-    console.log("No angkatan found in type"); // Debug
+    console.log("No angkatan found in type"); 
     return null;
 }
 
-// Function untuk hitung statistik berdasarkan type - DIPERBAIKI
+
 function hitungStatistikDariType() {
-    // Filter yang status Aktif (case insensitive) - DIPERBAIKI
+   
     const anggotaAktif = anggota.filter(a => 
         a.status.toLowerCase() === "aktif"
     );
     
-    console.log("Anggota Aktif:", anggotaAktif.length); // Debug
+    console.log("Anggota Aktif:", anggotaAktif.length); 
     
-    // Extract semua angkatan dari type yang aktif
+    
     const semuaAngkatan = [];
     
     anggotaAktif.forEach(anggota => {
@@ -42,9 +42,8 @@ function hitungStatistikDariType() {
         }
     });
     
-    console.log("Semua Angkatan:", semuaAngkatan); // Debug
+    console.log("Semua Angkatan:", semuaAngkatan);
     
-    // Jika tidak ada angkatan ditemukan, coba alternatif
     if (semuaAngkatan.length === 0) {
         console.log("Menggunakan alternatif: mengambil dari field angkatan");
         anggotaAktif.forEach(anggota => {
@@ -57,12 +56,11 @@ function hitungStatistikDariType() {
         });
     }
     
-    // Hitung angkatan unik
+    
     const angkatanUnik = [...new Set(semuaAngkatan)].sort((a, b) => a - b);
     
-    console.log("Angkatan Unik:", angkatanUnik); // Debug
+    console.log("Angkatan Unik:", angkatanUnik); 
     
-    // Hitung statistik per angkatan
     const statistikPerAngkatan = {};
     const anggotaPerAngkatan = {};
     
@@ -71,7 +69,7 @@ function hitungStatistikDariType() {
             const angkatanDariType = extractAngkatanFromType(a.type);
             if (angkatanDariType === angkatan) return true;
             
-            // Fallback: cek dari field angkatan
+            
             if (a.angkatan && a.angkatan.includes(angkatan.toString())) {
                 return true;
             }
@@ -93,18 +91,18 @@ function hitungStatistikDariType() {
         semuaDataAngkatan: semuaAngkatan
     };
     
-    console.log("Final Result:", result); // Debug
+    console.log("Final Result:", result); 
     return result;
 }
 
-// Function untuk update UI - DIPERBAIKI
+
 function updateStatistikDariType() {
     try {
         const statistik = hitungStatistikDariType();
         
         console.log("Statistik dari Type:", statistik);
         
-        // Update elements di HTML - DIPERBAIKI dengan fallback
+        
         const elements = {
             'currentAngkatan': statistik.totalAngkatan || 0,
             'totalMembers': statistik.totalAnggota || 0,
@@ -116,13 +114,13 @@ function updateStatistikDariType() {
             const element = document.getElementById(elementId);
             if (element) {
                 element.textContent = elements[elementId];
-                console.log(`Updated ${elementId}:`, elements[elementId]); // Debug
+                console.log(`Updated ${elementId}:`, elements[elementId]); 
             } else {
-                console.log(`Element ${elementId} not found`); // Debug
+                console.log(`Element ${elementId} not found`); 
             }
         });
         
-        // Update visual elements
+        
         renderStatistikCardsDariType(statistik);
         
     } catch (error) {
@@ -130,7 +128,6 @@ function updateStatistikDariType() {
     }
 }
 
-// Function untuk statistik cards - DIPERBAIKI
 function renderStatistikCardsDariType(statistik) {
     const container = document.getElementById('statistikCards');
     if (!container) {
@@ -171,13 +168,12 @@ function renderStatistikCardsDariType(statistik) {
     console.log("Statistik cards rendered");
 }
 
-// Initialize - DIPERBAIKI
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM Loaded - Initializing statistik");
     updateStatistikDariType();
 });
 
-// Test function untuk debug
 function testStatistik() {
     console.log("=== TEST STATISTIK ===");
     console.log("Total anggota:", anggota.length);
@@ -192,4 +188,5 @@ function testStatistik() {
 }
 
 // Jalankan test
+
 testStatistik();
