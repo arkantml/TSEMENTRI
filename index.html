@@ -12,7 +12,16 @@
   <script type="module" src="script.js"></script>
   <script type="module" src="menu.js"></script>
   <script type="module" src="gallery.js"></script>
-  
+  <style>.reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px); /* Mulai 50px di bawah posisi aslinya */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0); /* Kembali ke posisi asli */
+        }</style>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -76,7 +85,7 @@
 
   </section>
 
-  <section id="tentang" class="min-h-screen bg-gray-100 dark:bg-gray-800 py-12 justify-center items-center">
+  <section id="tentang" class="min-h-screen bg-gray-100 dark:bg-gray-800 py-12 justify-center items-center reveal-on-scroll">
     <div class="relative overflow-hidden bg-gray-100 dark:bg-gray-800 py-12">
       <div id="titleabout"class="flex space-x-6 animate-marquee-left">
         <div class="flex-shrink-0 w-64 h-64 rounded-2xl overflow-hidden shadow-lg">
@@ -135,7 +144,7 @@
         }
       </style>
 
-      <div  class="max-w-4xl mx-auto text-center px-6 m-4">
+      <div  class="max-w-4xl mx-auto text-center px-6 m-4 ">
         <h2 class="text-3xl md:text-4xl xl:text-6xl font-bold mb-6 ">Tentang TSEMENTRI</h2>
         <p class="text-lg md:text-xl xl:*:text-3xl text-gray-700 dark:text-gray-300 mb-6">
           Wadah siswa MTsN 3 Medan berbakat teknologi sejak 2023.
@@ -226,7 +235,7 @@
 
   </section>
 
-  <section id="galeri" class="py-20 bg-white dark:bg-gray-900">
+  <section id="galeri" class="py-20 bg-white dark:bg-gray-900 reveal-on-scroll">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Galeri Kegiatan TSEMENTRI</h2>
 
@@ -281,7 +290,7 @@
         href="artikel2.html">Lihat Semua Galeri</a>
     </button>
   </section>
-<section id="kontak" class="py-20 bg-white dark:bg-gray-800 text-black">
+<section id="kontak" class="py-20 bg-white dark:bg-gray-800 text-black reveal-on-scroll">
     <div class="max-w-2xl mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-4 dark:text-white">Hubungi Kami</h2>
         <p class="text-gray-600 dark:text-gray-300 mb-8">Punya pertanyaan atau masukan? Kirimkan pesan Anda.</p>
@@ -314,6 +323,7 @@
 
 
 </html>
+
 
 
 
