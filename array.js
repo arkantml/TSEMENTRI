@@ -12,7 +12,7 @@ export const anggota = [
     { nama: "Divyanisa Almyra Prameswari",     type: "Angkatan 1",                    kelas: "-", angkatan: ["4"],      email: "divyanisarevanzaadelyo@gmail.com", status: "Alumni",nisn: "0115180887",                         foto:"img/pas photo/kak divy.jpg", },
     { nama: "Dastan Afroza",                   type: "Angkatan 1",                    kelas: "9", angkatan: ["4"],      email: "dastanafroza@gmail.com",           status: "OUT",   nisn: "3117454231",                         foto:"img/pas photo/dastan.jpg",},
     { nama: "Faqih Ahmad Zuhdi",               type: "Angkatan 1",                    kelas: "9", angkatan: ["4"],      email: "-",                                status: "OUT",   nisn: "-",                                  foto:"",},
-    { nama: "Mooftya",                         type: "Angkatan 1",                    kelas: "9", angkatan: ["4"],      email: "dastanafroza@gmail.com",           status: "OUT",   nisn: "3117454231",                         foto:"img/pas photo/dastan.jpg",},
+    { nama: "Mooftya",                         type: "Angkatan 1",                    kelas: "9", angkatan: ["4"],      email: "-",                                status: "OUT",   nisn: "3117454231",                         foto:"",},
     { nama: "Muhammad Afiq Sembiring",         type: "Angkatan 1",                    kelas: "-", angkatan: ["4"],      email: "-",                                status: "Alumni",nisn: "-",                                  foto:"",},
     { nama: "Adwa Mughis Mahirdi",             type: "Angkatan 2",                    kelas: "8", angkatan: ["5"],      email: "adwatugassekolah@gmail.com",       status: "OUT", nisn: "0124662961",                         foto:"img/pas photo/adwa.jpeg"},
     { nama: "Nauval Aulia Simanjuntak",        type: "Angkatan 2",                    kelas: "8", angkatan: ["5"],      email: "nauvalauliasimanjuntak@gmail.com", status: "Aktif", nisn: "0122931880",                         foto:"img/pas photo/noval.jpg"},
@@ -36,4 +36,5 @@ export const anggota = [
     { nama: "Nasywa Athaya Fawwaz",            type: "Angkatan 3",                    kelas: "7", angkatan: ["6"],      email: "nasywafawwaz39@gmail.com",         status: "Aktif", nisn: "0128764622" ,                        foto:"img/pas photo/nasywa.jpg"},
 
   ];
+
 
